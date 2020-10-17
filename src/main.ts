@@ -45,7 +45,7 @@ console.log(`Running in ${baseDir}`);
     info('> Pulling from remote...')
     await git
       .fetch(undefined, log)
-      .pull(undefined, undefined, undefined, log)
+      .pull(undefined, undefined, { '--autostash': null }, log)
 
     info('> Re-staging files...')
     if (getInput('add')) await add({ ignoreErrors: true })
